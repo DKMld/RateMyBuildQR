@@ -1,13 +1,6 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-from django.middleware.csrf import get_token
 from rest_framework import serializers
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework_simplejwt.views import TokenObtainPairView
-
-from backend.common.models import Car
-from backend.rating.models import CarRating
 
 
 
@@ -23,10 +16,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])  # Hash the password
         user.save()
         return user
-
-
-
-
 
 
 
@@ -52,19 +41,4 @@ class LoginSerializer(serializers.Serializer):
         # this returns USERNAME AND PASSWORD of input fields of the frontend
         return data
 
-
-
-
-
-
-# class GetUserCarSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Car
-#         fields = '__all__'
-#
-#
-# class GetCarRatingSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = CarRating
-#         fields = '__all__'
 

@@ -1,15 +1,8 @@
 from rest_framework import serializers
-
 from backend.common.models import Car
 
 
-class PostCarSerializer(serializers.ModelSerializer):
-    user = serializers.CharField(source='user.username', read_only=True)
-
+class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
-        fields = '__all__'
-
-    def create(self, validated_data):
-        user = self.context['request'].user
-        return Car.objects.create(user=user, **validated_data)
+        fields = ['user','car_brand', 'car_model', 'car_year', 'car_description', 'car_picture']
