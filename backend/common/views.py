@@ -1,10 +1,6 @@
 from io import BytesIO
-
 from django.core.files.base import ContentFile
-from django.http import JsonResponse
-from django.middleware.csrf import get_token
-from django.shortcuts import render, get_object_or_404
-from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import   get_object_or_404
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -15,19 +11,19 @@ from backend.common.models import Car
 from backend.common.serializers import CarSerializer, QRcodeSerializer
 
 
-@api_view(['GET'])
-def home_page(request):
-
-    data = {
-        'message': 'Hello World!',
-    }
-
-    return Response(data)
-
-
-@api_view(['GET'])
-def csrf(request):
-    return JsonResponse({'csrfToken': get_token(request)})
+# @api_view(['GET'])
+# def home_page(request):
+#
+#     data = {
+#         'message': 'Hello World!',
+#     }
+#
+#     return Response(data)
+#
+#
+# @api_view(['GET'])
+# def csrf(request):
+#     return JsonResponse({'csrfToken': get_token(request)})
 
 
 class UserCars(APIView):
@@ -52,6 +48,7 @@ class UserCars(APIView):
 
     def get(self, request, *args, **kwargs):
         user_cars = Car.objects.filter(user=request.user)
+
         serializer = CarSerializer(user_cars, many=True)
 
         data = {
@@ -63,6 +60,7 @@ class UserCars(APIView):
 
     def delete(self, request, *args, **kwargs):
         pass
+#     TODO delete button for user cars
 
 
 
@@ -72,12 +70,11 @@ class CarQR(APIView):
     def get(self, request, *args, **kwargs):
         car = get_object_or_404(Car, slug=kwargs['car_slug'])
 
-        qr_code = qrcode.make(f"http://127.0.0.1:8000{request.get_full_path()}")
+        qr_code = qrcode.make(f"http://127.0.0.1:8000{request.get_full_path()}/rate")
         buffer = BytesIO()
         qr_code.save(buffer, 'PNG')
         buffer.seek(0)
         qr_file = ContentFile(buffer.read(), name=f"{kwargs['username']}_{kwargs['car_slug']}.png")
-
 
         qr_data = {
             'car': car.pk,
@@ -105,4 +102,6 @@ class CarQR(APIView):
 
     def post(self, request, *args, **kwargs):
         pass
+
+
 

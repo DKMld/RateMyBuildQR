@@ -21,12 +21,14 @@ from django.urls import path, include
 from backend import settings
 from backend.common import urls as common_urls
 from backend.accounts import urls as account_urls
+from backend.rating import urls as rating_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', include(common_urls)),
     path('', include(account_urls)),
+    path('', include(rating_urls)),
 ]
 
 if settings.DEBUG:

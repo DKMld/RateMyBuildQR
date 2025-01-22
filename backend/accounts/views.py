@@ -27,6 +27,7 @@ def register(request):
 @api_view(['POST'])
 def login_view(request):
     serializer = LoginSerializer(data=request.data)
+
     if serializer.is_valid():
         username = serializer.validated_data.get('username')
         password = serializer.validated_data.get('password')
@@ -46,7 +47,6 @@ def login_view(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 
 @api_view(['POST'])
