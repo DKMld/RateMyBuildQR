@@ -45,7 +45,6 @@ INSTALLED_APPS = [
 
     'corsheaders',
 
-    # 'rest_framework_simplejwt.token_blacklist',
     'rest_framework.authtoken',
     'rest_framework',
 
@@ -91,12 +90,23 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'RateMyBuildQR',
+        'USER': 'postgres',
+        'PASSWORD': '08120101m',
+        'HOST': 'localhost',
+        'PORT': '8001',
     }
 }
+
 
 
 # Password validation
@@ -172,3 +182,7 @@ AUTH_USER_MODEL = 'auth.User'
 # PROD ONLY
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
+
+
+# TODO Hide all TOKENS/KEYS etc. in .env file
+# TODO - Deploy :)

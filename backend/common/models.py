@@ -23,6 +23,8 @@ class Car(models.Model):
 
 
 
+
+
 class CarQrCode(models.Model):
     car = ForeignKey(Car, on_delete=models.CASCADE)
 

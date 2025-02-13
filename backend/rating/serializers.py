@@ -3,8 +3,6 @@ from backend.rating.models import CarRating
 
 
 class CarRatingSerializer(serializers.ModelSerializer):
-    # rated_by = serializers.CharField(write_only=True, required=False, allow_blank=True)
-
     class Meta:
         model = CarRating
         fields = ['car', 'rating', 'rated_by', 'comment']

@@ -11,24 +11,16 @@ class CarRating(APIView):
     def get(self, request, *args, **kwargs):
         car = Car.objects.filter(slug=kwargs['car_slug']).get()
 
-        car_data = {
-            'user': car.user.id,
-            'car_brand': car.car_brand,
-            'car_model': car.car_model,
-            'car_year': car.car_year,
-            'car_description': car.car_description,
-            'car_picture': car.car_picture,
-        }
-        serializer = CarSerializer(data=car_data)
-
-        if serializer.is_valid():
+        try:
+            serializer = CarSerializer(car, many=False)
 
             data = {
                 'car_info': serializer.data,
             }
 
             return Response(data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
     def post(self,request, *args, **kwargs):

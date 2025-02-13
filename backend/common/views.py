@@ -11,21 +11,6 @@ from backend.common.models import Car
 from backend.common.serializers import CarSerializer, QRcodeSerializer
 
 
-# @api_view(['GET'])
-# def home_page(request):
-#
-#     data = {
-#         'message': 'Hello World!',
-#     }
-#
-#     return Response(data)
-#
-#
-# @api_view(['GET'])
-# def csrf(request):
-#     return JsonResponse({'csrfToken': get_token(request)})
-
-
 class UserCars(APIView):
     permission_classes([IsAuthenticated])
 
@@ -61,7 +46,6 @@ class UserCars(APIView):
     def delete(self, request, *args, **kwargs):
         pass
 #     TODO delete button for user cars
-
 
 
 class CarQR(APIView):

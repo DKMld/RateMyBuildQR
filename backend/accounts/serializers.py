@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 
 
-
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True)
 
@@ -16,7 +15,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])  # Hash the password
         user.save()
         return user
-
 
 
 class LoginSerializer(serializers.Serializer):

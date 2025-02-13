@@ -1,4 +1,3 @@
-from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
@@ -7,7 +6,6 @@ from backend.common.models import Car
 
 class CarRating(models.Model):
     car = models.ForeignKey(Car, on_delete=models.CASCADE)
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     rated_by = models.CharField(max_length=128, null=True, blank=True)
 
@@ -16,11 +14,14 @@ class CarRating(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
+    @staticmethod
+    def get_car_rating(car_instance) -> float:
+        print(car_instance)
+        car_ratings = CarRating.objects.filter(car=car_instance.pk).values_list('rating', flat=True)
 
-    def get_car_rating(self) -> float:
-        pass
+        rating = 0.0
 
+        if car_ratings:
+            rating = sum(car_ratings) / len(car_ratings)
 
-    def get_times_rated(self) -> int:
-        pass
-
+        return round(rating, 1)
