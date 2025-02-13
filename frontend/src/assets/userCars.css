@@ -1,0 +1,195 @@
+.car-form-container {
+    /*max-width: 600px;*/
+    /*padding: 20px;*/
+    margin: 5%;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-message {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.add-car-div{
+    display: flex;
+    justify-content: center;
+}
+.toggle-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+    width: 50%;
+}
+
+.toggle-button:hover {
+    background: #0056b3;
+}
+
+.car-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+/*.form-label-textarea{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+.form-input, .form-textarea {
+    width: 20rem;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.submit-button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background: #218838;
+}
+
+
+
+
+
+
+
+
+
+
+.cars-div {
+    /*width: 100%;*/
+    /*display: flex;*/
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.your-cars-div {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cars-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Align the car boxes in the center */
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.car-box {
+    width: 30rem; /* Fixed width for each car box */
+    height: 20rem;
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.car-box:hover {
+    transform: translateY(-10px); /* Hover effect */
+}
+
+.car-image {
+    width: 100%; /* Image takes up 40% of the box */
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.car-info {
+    /*padding: 10px;*/
+    width: 60%; /* Text info takes up the remaining 60% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3%;
+}
+.car-info-rating-score-div{
+    background-color: #f9f9f9;
+    border-radius:  45px;
+
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Center text */
+    flex-grow: 0;
+    padding: 10px;
+}
+/*.car-info-rating-div{*/
+/*    margin: 3%;*/
+
+/*}*/
+
+.car-info h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.car-info p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+.car-form-labels-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+.main-div-car-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: inherit;
+}
+
+

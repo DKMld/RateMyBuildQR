@@ -1,0 +1,104 @@
+.rating-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.car-display-box {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/*.car-image {*/
+/*  width: 100%;*/
+/*  height: auto;*/
+/*  border-radius: 12px;*/
+/*}*/
+
+.car-info-box {
+  background: #f8f8f8;
+  padding: 16px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.car-info-box h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.rating-section {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.star {
+  font-size: 2rem;
+  color: #ddd;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.star.filled {
+  color: #FFD700;
+}
+
+.comment-box {
+  width: 100%;
+  padding: 8px;
+  margin-top: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: none;
+  height: 80px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: #007BFF;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.submit-button:hover {
+  background: #0056b3;
+}
+
+.rating-textarea-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.rateing-page-submit-button-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

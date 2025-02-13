@@ -1,0 +1,126 @@
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+header button {
+    margin: 10px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: white;
+    background: #ff9800;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+header button:hover {
+    background: #f57c00;
+}
+
+
+
+
+
+
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background: #f5f5f5;
+}
+
+.feature-section-div{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    max-width: 300px;
+    border-radius: 30px;
+    background-color: lightblue;
+    margin: 5px;
+    box-shadow: 0 10px 15px rgba(1,1,1,0.2);
+}
+
+section.features h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+section.features p {
+    font-size: 1rem;
+    color: #555;
+}
+
+section.features div:hover {
+    background: #e3f2fd;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+
+
+
+
+/*section.top-builds {*/
+/*    padding: 60px 20px;*/
+/*    background: #212121;*/
+/*    color: white;*/
+/*}*/
+
+/*section.top-builds h2 {*/
+/*    text-align: center;*/
+/*    font-size: 2.5rem;*/
+/*    margin-bottom: 40px;*/
+/*}*/
+
+/*.top-builds-grid {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
+/*    gap: 20px;*/
+/*}*/
+
+/*.build-card {*/
+/*    background: #424242;*/
+/*    padding: 20px;*/
+/*    border-radius: 12px;*/
+/*    text-align: center;*/
+/*    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);*/
+/*    transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+/*}*/
+
+/*.build-card img {*/
+/*    width: 100%;*/
+/*    border-radius: 8px;*/
+/*    margin-bottom: 15px;*/
+/*}*/
+
+/*.build-card h3 {*/
+/*    color: #ffcc00;*/
+/*}*/
+
+/*.build-card p {*/
+/*    color: #bdbdbd;*/
+/*}*/
+
+/*.build-card:hover {*/
+/*    transform: scale(1.05);*/
+/*    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);*/
+/*}*/
