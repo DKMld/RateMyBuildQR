@@ -95,7 +95,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '08120101m',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '8001',
 
     }
 }
@@ -168,7 +168,6 @@ AUTH_USER_MODEL = 'auth.User'
 
 
 
-CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "https://ratemybuildqr.com",
@@ -176,6 +175,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "https://ratemybuildqr.com",
