@@ -145,17 +145,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",
-]
 
 
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
-
-CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -174,6 +165,22 @@ AUTH_USER_MODEL = 'auth.User'
 
 
 
+
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://ratemybuildqr.com",
+    "https://www.ratemybuildqr.com",
+]
+
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://ratemybuildqr.com",
+    "https://www.ratemybuildqr.com",
+]
 
 # PROD ONLY
 CSRF_COOKIE_SECURE = True
