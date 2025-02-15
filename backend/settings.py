@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-a-oto7b7s$o-ocm33=9=71^e-lfi@-2bcec2g(724r!)#4m5+p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['api.ratemybuildqr.com', '161.35.103.8']
+ALLOWED_HOSTS = ['api.ratemybuildqr.com', '161.35.103.8', '134.209.215.10', 'ratemybuildqr.com']
 
 
 # Application definition
