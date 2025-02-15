@@ -10,6 +10,7 @@ const Register = () => {
     const [message, setMessage] = useState('')
     const navigate = useNavigate()
 
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const checkUserIsAuth = (userToken) => {
         if(userToken){
@@ -24,7 +25,7 @@ const Register = () => {
 
 
     const handleRegister = async() => {
-        const response = await fetch('http://127.0.0.1:8000/api/register', {
+        const response = await fetch(`${API_URL}/api/register`, {
 
             method:'POST',
             headers:{

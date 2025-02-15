@@ -22,6 +22,8 @@ const PostCar: React.FC = () => {
 
     const navigate = useNavigate()
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const toggleForm = () => {
         setShowForm(!showForm);
         setShowCars(!showCars)
@@ -43,7 +45,7 @@ const PostCar: React.FC = () => {
 
 
             if (token && username) {
-                const response = await fetch(`http://127.0.0.1:8000/api/${username}/cars`, {
+                const response = await fetch(`${API_URL}/api/${username}/cars`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -87,7 +89,7 @@ const PostCar: React.FC = () => {
 
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/${username}/cars`, {
+            const response = await fetch(`${API_URL}/api/${username}/cars`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Token ${userToken}`,

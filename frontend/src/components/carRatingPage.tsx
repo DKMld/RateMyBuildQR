@@ -9,11 +9,12 @@ const CarRateingPage = () => {
     const [userRating, setUserRating] = useState(0)
     const [userComment, setUserComment] = useState('')
 
+    const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
          const getCarQr = async() => {
 
-            const response = await fetch(`http://127.0.0.1:8000/api/${username}/cars/${slug}/rate`, {
+            const response = await fetch(`${API_URL}/api/${username}/cars/${slug}/rate`, {
 
                 method:'GET',
                 headers:{

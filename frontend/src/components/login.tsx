@@ -11,6 +11,7 @@ const Login= () => {
     const [message, setMessage] = useState('')
     const navigate = useNavigate()
 
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const checkUserIsAuth = (userToken) => {
         if(userToken){
@@ -27,7 +28,7 @@ const Login= () => {
 
     const handleLogin = async() => {
 
-        const response = await fetch('http://127.0.0.1:8000/api/login', {
+        const response = await fetch(`${API_URL}api/login`, {
 
             method:'POST',
             headers:{

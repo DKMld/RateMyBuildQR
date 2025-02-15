@@ -3,6 +3,7 @@ import '../assets/carQrPage.css';
 import {useNavigate, useParams} from "react-router-dom";
 
 
+
 const CarQrCode = () => {
     const navigate = useNavigate()
     const {username, slug} = useParams()
@@ -11,6 +12,7 @@ const CarQrCode = () => {
     const [carBrand, setCarBrand] = useState('')
     const [carModel, setCarModel] = useState('')
 
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const checkUserIsAuth = (userToken) => {
         if(userToken){
@@ -28,7 +30,7 @@ const CarQrCode = () => {
 
         const getCarQr = async() => {
 
-            const response = await fetch(`http://127.0.0.1:8000/api/${username}/cars/${slug}`, {
+            const response = await fetch(`${API_URL}/api/${username}/cars/${slug}`, {
 
                 method:'GET',
                 headers:{
