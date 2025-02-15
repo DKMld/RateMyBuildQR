@@ -54,7 +54,7 @@ const CarRateingPage = () => {
     return (
         <div className="rating-page-container">
             <div className="car-display-box">
-                <img src={`http://localhost:8000${carInfo.car_picture}`}  className="car-image"/>
+                <img src={`${API_URL}/${carInfo.car_picture}`}  className="car-image"/>
             </div>
             <div className="car-info-box">
                 <h2>{carInfo.car_brand} {carInfo.car_model}</h2>

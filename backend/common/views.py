@@ -54,7 +54,7 @@ class CarQR(APIView):
     def get(self, request, *args, **kwargs):
         car = get_object_or_404(Car, slug=kwargs['car_slug'])
 
-        qr_code = qrcode.make(f"http://127.0.0.1:8000{request.get_full_path()}/rate")
+        qr_code = qrcode.make(f"https://ratemybuildqr.com/{request.get_full_path()}/rate")
         buffer = BytesIO()
         qr_code.save(buffer, 'PNG')
         buffer.seek(0)

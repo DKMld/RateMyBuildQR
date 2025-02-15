@@ -174,7 +174,7 @@ const PostCar: React.FC = () => {
                             {userCars.map((car) => (
                                 <div className="car-box">
                                     <a href={`/${username}/cars/${car.slug}`}>
-                                        <img src={`http://localhost:8000${car.car_picture}`}
+                                        <img src={`${API_URL}/${car.car_picture}`}
                                                      alt={`${car.car_brand} ${car.car_model}`}
                                                      className="car-image"/>
                                     </a>
