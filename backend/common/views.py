@@ -57,7 +57,7 @@ class CarQR(APIView):
         full_path = request.get_full_path()
         modified_path = full_path.replace("/api", "")
 
-        qr_code = qrcode.make(f"https://ratemybuildqr.com/{modified_path}/rate")
+        qr_code = qrcode.make(f"https://ratemybuildqr.com{modified_path}/rate")
         buffer = BytesIO()
         qr_code.save(buffer, 'PNG')
         buffer.seek(0)
