@@ -9,7 +9,7 @@ const CarRateingPage = () => {
     const [userRating, setUserRating] = useState(0)
     const [userComment, setUserComment] = useState('')
 
-    const API_URL = process.env.REACT_APP_API_BASE_URL
+    const API_URL = "https://api.ratemybuildqr.com"
 
     useEffect(() => {
          const getCarQr = async() => {
