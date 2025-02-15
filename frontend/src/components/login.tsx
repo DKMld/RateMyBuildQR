@@ -11,7 +11,7 @@ const Login= () => {
     const [message, setMessage] = useState('')
     const navigate = useNavigate()
 
-    const API_URL = process.env.REACT_APP_API_BASE_URL || 'https://api.ratemybuildqr.com';
+    const API_URL = process.env.REACT_APP_API_BASE_URL
 
     const checkUserIsAuth = (userToken) => {
         if(userToken){

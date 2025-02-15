@@ -6,7 +6,7 @@ const Logout= () => {
 
     const navigate = useNavigate()
 
-    const API_URL = process.env.REACT_APP_API_BASE_URL || 'https://api.ratemybuildqr.com';
+    const API_URL = process.env.REACT_APP_API_BASE_URL
 
     useEffect(() => {
         const handleLogout = async () => {
