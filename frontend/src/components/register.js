@@ -21,9 +21,9 @@ const Register = () => {
     useEffect(() => {
         const token = localStorage.getItem('token');
         checkUserIsAuth(token)
+        const url = `${API_URL}/api/register`;
+        console.log("Final API URL:", url); // Log the final URL to debug
     }, []);
-    const url = `${API_URL}/api/register`;
-    console.log("Final API URL:", url); // Log the final URL to debug
 
     const handleRegister = async() => {
         const response = await fetch(`${API_URL}/api/register`, {
