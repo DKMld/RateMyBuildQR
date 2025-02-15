@@ -35,7 +35,7 @@ const CarRateingPage = () => {
 
 
     const handleRatingSubmit = async() => {
-        const response = await fetch(`http://127.0.0.1:8000/api/${username}/cars/${slug}/rate`, {
+        const response = await fetch(`${API_URL}/api/${username}/cars/${slug}/rate`, {
 
                 method:'POST',
                 headers:{

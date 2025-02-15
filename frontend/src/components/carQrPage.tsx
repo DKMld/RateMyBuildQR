@@ -59,7 +59,7 @@ const CarQrCode = () => {
             <div className="qr-code-container">
                  <div className="qr-code-box">
                      <img
-                         src={`http://localhost:8000${carQrCode}`}
+                         src={`${API_URL}/${carQrCode}`}
                          alt="QR Code"
                          className="qr-code-image"
                     />
