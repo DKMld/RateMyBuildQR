@@ -12,7 +12,7 @@ const CarQrCode = () => {
     const [carBrand, setCarBrand] = useState('')
     const [carModel, setCarModel] = useState('')
 
-    const API_URL = process.env.REACT_APP_API_URL;
+    const API_URL = process.env.REACT_APP_API_BASE_URL || 'https://api.ratemybuildqr.com';
 
     const checkUserIsAuth = (userToken) => {
         if(userToken){
