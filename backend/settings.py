@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-a-oto7b7s$o-ocm33=9=71^e-lfi@-2bcec2g(724r!)#4m5+p
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['api.ratemybuildqr.com', '161.35.103.8', '134.209.215.10', 'ratemybuildqr.com']
 
+ALLOWED_HOSTS = ['api.ratemybuildqr.com', '161.35.103.8', '134.209.215.10', 'ratemybuildqr.com']
 
 
 # Application definition
@@ -145,6 +145,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
+
+
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
@@ -210,8 +213,4 @@ LOGGING = {
 
 
 # TODO Hide all TOKENS/KEYS etc. in .env file
-# ADD error handling on login/register/posting a car
-# ADD redirect when successfully posting a car
-# ADD displaying messages on error/success ( login / register / adding a car / etc. )
-# FIX when logging in/out nav bar to refresh by itself
-# FIX on phone rating stars to appear right :D
+# TODO - Deploy :)
