@@ -31,8 +31,7 @@ SECRET_KEY = 'django-insecure-a-oto7b7s$o-ocm33=9=71^e-lfi@-2bcec2g(724r!)#4m5+p
 DEBUG = True
 ALLOWED_HOSTS = ['api.ratemybuildqr.com', '161.35.103.8', '134.209.215.10', 'ratemybuildqr.com']
 
-if DEBUG:
-    ALLOWED_HOSTS += ['localhost', '127.0.0.1']
+
 
 # Application definition
 
@@ -208,7 +207,6 @@ LOGGING = {
         },
     },
 }
-
 
 
 # TODO Hide all TOKENS/KEYS etc. in .env file
