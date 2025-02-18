@@ -11,7 +11,7 @@ const CarQrCode = () => {
     const [carBrand, setCarBrand] = useState('')
     const [carModel, setCarModel] = useState('')
 
-    const API_URL = "http://127.0.0.1:8000"
+    const API_URL = "https://api.ratemybuildqr.com"
 
     const checkUserIsAuth = (userToken) => {
         if(userToken){

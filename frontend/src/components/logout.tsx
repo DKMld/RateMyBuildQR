@@ -7,7 +7,7 @@ const Logout = () => {
   const { logout } = useAuth();
   const navigate = useNavigate();
 
-  const API_URL = "http://127.0.0.1:8000";
+  const API_URL = "https://api.ratemybuildqr.com"
 
   useEffect(() => {
     const handleLogout = async () => {

@@ -1,8 +1,5 @@
 import React, {use, useEffect, useState} from 'react';
 import '../assets/homePage.css';
-import {useNavigate} from "react-router-dom";
-
-
 
 
 const HomePage: React.FC = () => {

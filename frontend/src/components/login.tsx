@@ -13,7 +13,8 @@ const Login= () => {
     const [message, setMessage] = useState('')
     const navigate = useNavigate()
 
-    const API_URL = "http://127.0.0.1:8000"
+    const API_URL = "https://api.ratemybuildqr.com"
+
     const { login } = useAuth();
 
     const checkUserIsAuth = (userToken) => {
@@ -26,7 +27,6 @@ const Login= () => {
         const token = localStorage.getItem('token');
         checkUserIsAuth(token)
     }, []);
-
 
 
     const handleLogin = async() => {

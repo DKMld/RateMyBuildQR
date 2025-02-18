@@ -143,11 +143,6 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
-
-
-
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
@@ -169,32 +164,29 @@ AUTH_USER_MODEL = 'auth.User'
 
 
 
+
 CSRF_TRUSTED_ORIGINS = [
-    # "https://ratemybuildqr.com",
-    # "https://www.ratemybuildqr.com",
-    'http://localhost:8000'
+    "https://ratemybuildqr.com",
+    "https://www.ratemybuildqr.com",
 ]
 
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    # "https://ratemybuildqr.com",
-    # "https://www.ratemybuildqr.com",
-    'http://localhost:8000'
+    "https://ratemybuildqr.com",
+    "https://www.ratemybuildqr.com",
 ]
 
 # PROD ONLY
-# CSRF_COOKIE_SECURE = True
-# SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
-# # Security settings
-# SECURE_SSL_REDIRECT = False  # Redirect all HTTP requests to HTTPS
-# SECURE_HSTS_SECONDS = 3600  # Set HTTP Strict Transport Security (HSTS)
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to all subdomains
-# SECURE_HSTS_PRELOAD = True  # Preload HSTS for browsers
-
-
+# Security settings
+SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
+SECURE_HSTS_SECONDS = 3600  # Set HTTP Strict Transport Security (HSTS)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to all subdomains
+SECURE_HSTS_PRELOAD = True  # Preload HSTS for browsers
 
 LOGGING = {
     'version': 1,
