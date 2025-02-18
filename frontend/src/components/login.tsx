@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import '../assets/login_register.css';
 import {useNavigate} from "react-router-dom";
+import {toast} from "react-toastify";
+import { useAuth } from '../context/AuthContext';
 
 
 const Login= () => {
@@ -11,7 +13,8 @@ const Login= () => {
     const [message, setMessage] = useState('')
     const navigate = useNavigate()
 
-    const API_URL = "https://api.ratemybuildqr.com"
+    const API_URL = "http://127.0.0.1:8000"
+    const { login } = useAuth();
 
     const checkUserIsAuth = (userToken) => {
         if(userToken){
@@ -41,13 +44,11 @@ const Login= () => {
         const data = await response.json()
 
         if (response.ok){
-            setMessage(`Logged In ${username}`)
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('username', data.username);
+            login(data.token, data.username);
             navigate('/')
-
+            toast.success('Welcome back! You\'ve successfully logged in.')
         }else {
-            setMessage('Login failed!')
+            toast.error('Invalid credentials. Please ensure your username and password are correct.')
         }
 
     }
@@ -57,7 +58,6 @@ const Login= () => {
 
                 <div className="container">
                     <h2>Login</h2>
-                    {/*<h1>{responseData}</h1>*/}
                     <div className="input-group">
                         <label htmlFor="username">Username:</label>
                         <input

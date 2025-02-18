@@ -1,44 +1,41 @@
-import React, {useEffect} from 'react';
-import {useNavigate} from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useAuth } from '../context/AuthContext';
 
+const Logout = () => {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
 
-const Logout= () => {
+  const API_URL = "http://127.0.0.1:8000";
 
-    const navigate = useNavigate()
+  useEffect(() => {
+    const handleLogout = async () => {
+      const token = localStorage.getItem('token');
 
-    const API_URL = "https://api.ratemybuildqr.com"
+      if (token) {
+        const response = await fetch(`${API_URL}/api/logout`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Token ${token}`,
+          },
+        });
 
-    useEffect(() => {
-        const handleLogout = async () => {
-            const token = localStorage.getItem('token');
+        if (response.ok) {
+          logout();
+          navigate('/');
+          toast.success('You have successfully logged out. See you next time!');
+        } else {
+          toast.error('Oops! Something went wrong while logging out. Please try again later.');
+        }
+      }
+    };
 
-            if (token) {
-                const response = await fetch(`${API_URL}/api/logout`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Token ${token}`,
-                    },
-                });
+    handleLogout().then(() => {});
+  }, [logout, navigate]);
 
-
-                if (response.ok) {
-                    localStorage.removeItem('token');
-                    localStorage.removeItem('username')
-
-                    navigate('/');
-
-                } else {
-                    console.error('Logout failed')
-                }
-            }
-        };
-
-        handleLogout().then(r => {});
-
-    }, [navigate]);
-
-    return null;
+  return null;
 };
 
 export default Logout;

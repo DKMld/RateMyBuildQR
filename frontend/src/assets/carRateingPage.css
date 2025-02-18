@@ -80,16 +80,14 @@
   padding: 10px 20px;
   font-size: 1rem;
   color: #fff;
-  background: #007BFF;
+  background: linear-gradient(to right, #4f46e5, #9333ea);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   margin-top: 12px;
 }
 
-.submit-button:hover {
-  background: #0056b3;
-}
+
 
 .rating-textarea-div{
   display: flex;

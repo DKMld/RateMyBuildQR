@@ -1,6 +1,7 @@
 import React, {use, useEffect, useState} from 'react';
 import '../assets/login_register.css';
 import {useNavigate} from "react-router-dom";
+import {toast} from "react-toastify";
 
 
 const Register = () => {
@@ -10,7 +11,7 @@ const Register = () => {
     const [message, setMessage] = useState('')
     const navigate = useNavigate()
 
-    const API_URL = "https://api.ratemybuildqr.com"
+    const API_URL = "http://127.0.0.1:8000"
 
     const checkUserIsAuth = (userToken) => {
         if(userToken){
@@ -25,8 +26,6 @@ const Register = () => {
     }, []);
 
     const handleRegister = async() => {
-        const url = `${API_URL}/api/register`;
-        console.log("Final API URL:", url); // Log the final URL to debug
         const response = await fetch(`${API_URL}/api/register`, {
 
             method:'POST',
@@ -36,15 +35,26 @@ const Register = () => {
             body:
                 JSON.stringify({username, password})
         })
+        const data = await response.json()
 
         if (response.ok){
-            setMessage(`Thank you for your registration ${username}`)
+            toast.success('Registration successful! You can now show off your cars.')
             navigate('/login')
-        }else {
-            setMessage('Registration failed!')
+        }else{
+            if (data.username && data.username.length > 0) {
+                data.username.forEach((error) => {
+                toast.error(error);
+            });
         }
 
+        if (data.password && data.password.length > 0) {
+            data.password.forEach((error) => {
+                toast.error(error);
+            });
+            }
+        }
     }
+
 
     return (
         <div className='center-login-form'>
@@ -79,15 +89,14 @@ const Register = () => {
                         <button className='button-login-register' onClick={handleRegister}>Register</button>
                     </div>
                     <p className="redirect">
-                        Already have an account? <a href='/frontend/src/components/login'>Login here</a>
+                        Already have an account? <a href='/login'>Login here</a>
                     </p>
                 </div>
             </div>
             );
         };
 
-
-            export default Register;
+export default Register;
 
 
 

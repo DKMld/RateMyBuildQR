@@ -34,7 +34,7 @@ input {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background-color: #007BFF;
+    background: linear-gradient(to right, #4f46e5, #9333ea);
     color: white;
     border: none;
     border-radius: 4px;
@@ -49,6 +49,7 @@ button:hover {
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
+
 }
 
 .redirect a {

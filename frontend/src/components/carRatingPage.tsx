@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import '../assets/carRateingPage.css';
-import {useParams} from "react-router-dom";
-
+import {useNavigate, useParams} from "react-router-dom";
+import {toast} from "react-toastify";
 
 const CarRateingPage = () => {
     const {username, slug} = useParams()
@@ -9,7 +9,9 @@ const CarRateingPage = () => {
     const [userRating, setUserRating] = useState(0)
     const [userComment, setUserComment] = useState('')
 
-    const API_URL = "https://api.ratemybuildqr.com"
+    const navigate = useNavigate()
+
+    const API_URL = "http://127.0.0.1:8000"
 
     useEffect(() => {
          const getCarQr = async() => {
@@ -47,6 +49,12 @@ const CarRateingPage = () => {
                 })
             })
             if (response.ok){
+                toast.success('Your rating has been submitted successfully! 🚗⭐ Thanks for your feedback!')
+                navigate('/')
+            }
+            else{
+                toast.error('Oops! Something went wrong while submitting your rating. Please try again later')
+
             }
         }
 

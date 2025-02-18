@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-a-oto7b7s$o-ocm33=9=71^e-lfi@-2bcec2g(724r!)#4m5+p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['api.ratemybuildqr.com', '161.35.103.8', '134.209.215.10', 'ratemybuildqr.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -170,27 +170,31 @@ AUTH_USER_MODEL = 'auth.User'
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://ratemybuildqr.com",
-    "https://www.ratemybuildqr.com",
+    # "https://ratemybuildqr.com",
+    # "https://www.ratemybuildqr.com",
+    'http://localhost:8000'
 ]
 
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    "https://ratemybuildqr.com",
-    "https://www.ratemybuildqr.com",
+    # "https://ratemybuildqr.com",
+    # "https://www.ratemybuildqr.com",
+    'http://localhost:8000'
 ]
 
 # PROD ONLY
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 
-# Security settings
-SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
-SECURE_HSTS_SECONDS = 3600  # Set HTTP Strict Transport Security (HSTS)
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to all subdomains
-SECURE_HSTS_PRELOAD = True  # Preload HSTS for browsers
+# # Security settings
+# SECURE_SSL_REDIRECT = False  # Redirect all HTTP requests to HTTPS
+# SECURE_HSTS_SECONDS = 3600  # Set HTTP Strict Transport Security (HSTS)
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to all subdomains
+# SECURE_HSTS_PRELOAD = True  # Preload HSTS for browsers
+
+
 
 LOGGING = {
     'version': 1,

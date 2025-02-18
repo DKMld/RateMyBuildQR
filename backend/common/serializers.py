@@ -1,4 +1,7 @@
+from django.core.validators import MinValueValidator, MinLengthValidator, FileExtensionValidator
 from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
+
 from backend.common.models import Car, CarQrCode
 from backend.rating.models import CarRating as CarRatingModel
 
@@ -8,6 +11,28 @@ class CarSerializer(serializers.ModelSerializer):
         model = Car
         fields = ['user','car_brand', 'car_model', 'car_year', 'car_description', 'car_picture', 'slug']
 
+
+    def validate_car_brand(self, value):
+        min_len_validator = MinLengthValidator(limit_value=3)
+        min_len_validator(value)
+        return value
+    def validate_car_model(self, value):
+        min_len_validator = MinLengthValidator(limit_value=3)
+        min_len_validator(value)
+        return value
+    def validate_car_year(self, value):
+        min_value_validator = MinValueValidator(1950)
+        min_value_validator(value)
+        return value
+    def validate_car_picture(self, image):
+        file_extension_validator = FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])
+        file_extension_validator(image)
+        max_size = 5 * 1024 * 1024  # 5MB limit
+        if image.size > max_size:
+            raise ValidationError(f"Image size should not exceed 5MB.")
+        return image
+
+
     def to_representation(self, instance):
         data = super().to_representation(instance)
 
@@ -15,6 +40,7 @@ class CarSerializer(serializers.ModelSerializer):
         data['rating_score'] = rating_score
 
         return data
+
 
 
 class QRcodeSerializer(serializers.ModelSerializer):
