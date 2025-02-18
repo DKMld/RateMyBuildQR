@@ -20,12 +20,12 @@ const NavBar = () => {
                     {isAuthenticated ? (
                         <div className='nav-items-div'>
                             <li>
-                                <NavLink style={{ color: 'blue' }} to={`/${username}/cars`}>
+                                <NavLink style={{ color: 'white' }} to={`/${username}/cars`}>
                                     Cars
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink style={{ color: 'red' }} to='/logout'>
+                                <NavLink style={{ color: 'white' }} to='/logout'>
                                     Logout
                                 </NavLink>
                             </li>

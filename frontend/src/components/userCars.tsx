@@ -156,7 +156,7 @@ const PostCar: React.FC = () => {
                             </label>
                         </div>
                         <div className='car-form-labels-div'>
-                            <label className="form-label-textarea">
+                            <label className="form-label">
                                 Car Description:
                                 <textarea className="form-textarea" name="car_description"
                                           onChange={(e) => setCarDescription(e.target.value)}></textarea>
@@ -181,7 +181,7 @@ const PostCar: React.FC = () => {
                 {showCars && (
                     <>
                         <div className='your-cars-div'>
-                            <h1 >Your Cars</h1>
+                            <h1 className='your-cars'>Your Cars</h1>
                         </div>
 
                         {userCars.length > 0 ? (
@@ -214,7 +214,9 @@ const PostCar: React.FC = () => {
                             </ul>
 
                         ) : (
-                            <p>No cars available.</p>
+                            <div className='no-cars-avlbl-div'>
+                                <p>No cars available.</p>
+                            </div>
                         )}
                     </>
                 )}

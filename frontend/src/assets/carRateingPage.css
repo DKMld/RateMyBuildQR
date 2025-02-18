@@ -13,6 +13,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  animation: glow 0.5s infinite alternate;
 }
 
 /*.car-image {*/
@@ -80,11 +81,12 @@
   padding: 10px 20px;
   font-size: 1rem;
   color: #fff;
-  background: linear-gradient(to right, #4f46e5, #9333ea);
+  background: #5865F2;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   margin-top: 12px;
+  animation: glow 0.5s infinite alternate;
 }
 
 

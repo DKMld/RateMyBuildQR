@@ -58,35 +58,39 @@ const Register = () => {
 
     return (
         <div className='center-login-form'>
-                <div className="container">
+            <div className="container">
 
-                    <h2>Register</h2>
+                <div className='login-register-label-div'>
+                    <h2 className='login-register-label'>Register</h2>
+                </div>
+                <div className='login-register-input-group-div'>
 
-                    <div className="input-group">
-                        <label htmlFor="username">Username:</label>
-                        <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            required
-                        />
-                    </div>
+                        <div className="input-group">
+                            <label htmlFor="username">Username:</label>
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                        </div>
 
-                    <div className="input-group">
-                        <label htmlFor="password">Password:</label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="input-group">
-                        <button className='button-login-register' onClick={handleRegister}>Register</button>
+                        <div className="input-group">
+                            <label htmlFor="password">Password:</label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="input-group">
+                            <button className='button-login-register' onClick={handleRegister}>Register</button>
+                        </div>
                     </div>
                     <p className="redirect">
                         Already have an account? <a href='/login'>Login here</a>
@@ -94,9 +98,9 @@ const Register = () => {
                 </div>
             </div>
             );
-        };
+            };
 
-export default Register;
+            export default Register;
 
 
 

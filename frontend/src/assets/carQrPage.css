@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   margin: 10%;
+  color: white;
 }
 
 
@@ -16,6 +17,7 @@
   align-items: center;
   margin: 20px 0;
   padding: 10px;
+
 }
 
 .qr-code-box {
@@ -26,7 +28,7 @@
   border: 2px solid #333;
   border-radius: 12px;
   padding: 16px;
-  background: #f9f9f9;
+  background: #5865F2;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 500px;
   width: 90%;
@@ -54,12 +56,12 @@
 .qr-code-title {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #333;
+  color: white;
 }
 
 .qr-code-subtitle {
   font-size: 0.9rem;
-  color: #666;
+  color: white;
 }
 
 .unique-label-div{
@@ -68,7 +70,7 @@
   align-items: center;
 }
 .website-logo-in-qr-box{
-  color: black;
+  color: white;
   text-shadow: #61dafb 1px 0 10px;
 ;
 }

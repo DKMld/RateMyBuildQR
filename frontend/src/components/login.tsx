@@ -57,33 +57,40 @@ const Login= () => {
             <div className='center-login-form'>
 
                 <div className="container">
-                    <h2>Login</h2>
-                    <div className="input-group">
-                        <label htmlFor="username">Username:</label>
-                        <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            required
-                        />
+                    <div className='login-register-label-div'>
+                        <h2 className='login-register-label'>Login</h2>
+                    </div>
+                    <div className='login-register-input-group-div'>
+
+                        <div className="input-group">
+                            <label htmlFor="username">Username:</label>
+                                <input
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    required
+                                />
+                        </div>
+
+                        <div className="input-group">
+                            <label htmlFor="password">Password:</label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+
+                        <div className="input-group">
+                                <button className='button-login-register' onClick={handleLogin}>Log In</button>
+                        </div>
                     </div>
 
-                    <div className="input-group">
-                        <label htmlFor="password">Password:</label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="input-group">
-                        <button className='button-login-register' onClick={handleLogin}>Log In</button>
-                    </div>
                     <p className="redirect">
                         Don't have an account? <a href='/register'>Register Here</a>
                     </p>

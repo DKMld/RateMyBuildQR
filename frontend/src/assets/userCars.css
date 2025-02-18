@@ -2,7 +2,7 @@
     /*max-width: 600px;*/
     /*padding: 20px;*/
     margin: 5%;
-    background: #f9f9f9;
+    background: #36393F;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -11,13 +11,12 @@
     font-size: 2rem;
     font-weight: bold;
     color: white;
-    background: linear-gradient(to right, #4f46e5, #9333ea);
-    border-radius: 10px;
+    background: #36393F;
+    border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    animation: glow 1.5s infinite alternate;
+    animation: glow 5s infinite alternate;
     padding: 1%;
-    margin: 3%;
   }
 
   @keyframes glow {
@@ -37,7 +36,7 @@
     justify-content: center;
 }
 .toggle-button {
-    background: linear-gradient(to right, #4f46e5, #9333ea);
+    background: #5865F2;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -47,6 +46,7 @@
     margin-bottom: 15px;
     transition: background-color 0.3s;
     width: 50%;
+    animation: glow 0.5s infinite alternate;
 }
 
 
@@ -58,6 +58,7 @@
 }
 
 .form-label {
+    color: white;
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -104,6 +105,20 @@
 .your-cars-div {
     text-align: center;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.your-cars{
+    background-color: #36393F;
+    color: white;
+    border-radius: 35px;
+    width: 50%;
+}
+.no-cars-avlbl-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cars-ul {
