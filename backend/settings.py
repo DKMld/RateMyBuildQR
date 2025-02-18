@@ -217,4 +217,5 @@ LOGGING = {
 
 
 # TODO Hide all TOKENS/KEYS etc. in .env file
-# TODO - Deploy :)
+# TODO Center Login/Log out buttons
+# TODO To change the colours of the website
